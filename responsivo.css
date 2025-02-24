@@ -1,0 +1,51 @@
+@media(max-width: 1280px) {
+    
+    .cabecalho {
+        padding: 30px;
+    }
+
+    .home {
+        flex-direction: column-reverse;
+        align-items: center;
+        margin: 50px 0;
+        gap: 30px;
+    }
+
+    .home .informacoes {
+        max-width: 100%;
+        text-align: center;
+        align-items: center;
+    }
+
+    .projetos .container-projetos {
+        padding: 0 30px;
+    }
+}
+
+@media(max-width: 425px) {
+    .home .informacoes h1 {
+        font-size: 30px;
+    }
+
+    .home .informacoes p {
+        font-size: 16px;
+    }
+
+    .home .container-foto img {
+        width: 260px;
+        height: 260px;
+        width: 100%;
+        border-radius: 50%;
+    }
+    .home .container-foto .foto {
+        width: 260px;
+        height: 260px;
+        border-radius: 50%;
+    }
+
+    .container-projetos {
+        padding: 5px;
+        width: 360px;
+        height: 150px;
+    }
+}
