@@ -6,7 +6,3 @@ document.addEventListener("DOMContentLoaded", function () {
         sidebar.classList.toggle("active");
     });
 });
-function toggleMenu() {
-    const sidebar = document.getElementById('sidebar');
-    sidebar.classList.toggle('active');
-}
