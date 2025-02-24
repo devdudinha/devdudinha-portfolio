@@ -476,55 +476,48 @@ body {
     font-size: 24px;
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
+    /* Ajuste do cabeçalho no responsivo */
     .cabecalho {
-        display: none;
+        height: 60px; /* Reduz a altura do cabeçalho */
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
 
-    /* Esconde a logo "ME" */
+    /* Esconde a logo "ME" no mobile */
     .logo {
         display: none;
     }
 
-    /* Esconder os links âncoras */
+    /* Mostra as três barrinhas no mobile */
+    .menu-mobile {
+        display: block;
+        font-size: 30px;
+        cursor: pointer;
+    }
+
+    /* Esconde os links âncora no mobile */
     .menu ul {
         display: none;
     }
 
-    /* Mostrar as três barrinhas */
-    .menu-mobile {
-        display: block;
+    /* Ajusta o tamanho da imagem para ficar redonda */
+    .img-perfil {
+        width: 120px; /* Ajuste de tamanho */
+        height: 120px;
+        border-radius: 50%; /* Deixa a imagem completamente redonda */
+        object-fit: cover;
     }
 
-    /* Ajusta a imagem para telas menores */
-    img {
-        width: 250px;
-        height: 250px;
+    @media (max-width: 768px) {
+        .projetos {
+            display: block; /* Faz com que os projetos fiquem um abaixo do outro */
+        }
+    
+        .projetos .card {
+            width: 100%; /* Faz cada projeto ocupar toda a largura */
+            margin-bottom: 50px; /* Espaço entre os projetos */
+        }
     }
-}
-
-@media (max-width: 480px) {
-    .cabecalho {
-        font-size: 12px;
-    }
-
-    img {
-        width: 150px;
-        height: 150px;
-    }
-}
-@media (max-width: 768px) {
-    .projetos {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .projetos .card {
-        width: 90%; /* Aumenta o tamanho dos projetos no responsivo */
-        max-width: 400px; /* Evita que fiquem muito grandes */
-        margin-bottom: 20px;
-    }
-}
-
+    
