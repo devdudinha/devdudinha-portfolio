@@ -25,6 +25,7 @@ body {
 }
 
 .cabecalho .menu ul {
+    position: fixed;
     list-style: none;
     display: flex;
     gap: 20px;
