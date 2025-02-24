@@ -436,3 +436,95 @@ body {
     font-size: 1rem;
     margin-bottom: 10px;
 }
+
+/* Configuração geral */
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
+
+/* Estiliza a logo */
+.logo {
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+}
+
+/* Estilos do menu lateral */
+.sidebar {
+    position: fixed;
+    left: -250px;
+    width: 250px;
+    height: 100vh;
+    background: #333;
+    transition: left 0.3s ease;
+    padding-top: 20px;
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+/* Oculta o botão do menu em telas grandes */
+.menu-mobile {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .cabecalho {
+        display: none;
+    }
+
+    /* Esconde a logo "ME" */
+    .logo {
+        display: none;
+    }
+
+    /* Esconder os links âncoras */
+    .menu ul {
+        display: none;
+    }
+
+    /* Mostrar as três barrinhas */
+    .menu-mobile {
+        display: block;
+    }
+
+    /* Ajusta a imagem para telas menores */
+    img {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cabecalho {
+        font-size: 12px;
+    }
+
+    img {
+        width: 150px;
+        height: 150px;
+    }
+}
+@media (max-width: 768px) {
+    .projetos {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .projetos .card {
+        width: 90%; /* Aumenta o tamanho dos projetos no responsivo */
+        max-width: 400px; /* Evita que fiquem muito grandes */
+        margin-bottom: 20px;
+    }
+}
+
