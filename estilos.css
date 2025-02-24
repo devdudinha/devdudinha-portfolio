@@ -41,18 +41,36 @@ body {
     color: #ff6347;
 }
 
+/* Ícone das três barrinhas (menu hambúrguer) */
+.menu-mobile {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 30px; /* Aumenta o tamanho */
+    font-weight: bold;
+    cursor: pointer;
+    background-color: red; /* 🔴 Agora está vermelho */
+    color: white; /* Texto branco para contraste */
+    padding: 12px 18px;
+    border-radius: 5px;
+    z-index: 1000;
+    display: block; /* Garante que ele apareça */
+}
+
 /* Menu lateral */
 .menu-lateral {
     position: fixed;
     top: 0;
-    left: -250px; /* Inicialmente oculto */
+    left: -250px; /* Escondido inicialmente */
     width: 250px;
     height: 100%;
-    background-color: #333;
-    padding-top: 50px;
-    transition: 0.3s;
+    background-color: #222;
+    padding-top: 60px;
+    transition: left 0.3s ease-in-out;
+    z-index: 999;
 }
 
+/* Lista de links dentro do menu */
 .menu-lateral ul {
     list-style: none;
     padding: 0;
@@ -64,14 +82,31 @@ body {
 }
 
 .menu-lateral li a {
-    color: #fff;
+    color: white;
     font-size: 1.5rem;
     text-decoration: none;
     display: block;
+    transition: background-color 0.3s;
 }
 
 .menu-lateral li a:hover {
-    background-color:  #ff6347;
+    background-color: #ff6347;
+}
+
+/* Menu ativo (quando aparece) */
+.menu-lateral.active {
+    left: 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .menu-mobile {
+        display: block; /* Garante que aparece em telas pequenas */
+    }
+
+    .menu-lateral {
+        width: 50%; /* O menu ocupa toda a largura em telas menores */
+    }
 }
 
 /* Barra de links abaixo do título "ME" */
@@ -173,10 +208,14 @@ body {
 
 .home {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 50px 20px;
+    flex-direction: column; /* Empilhar os elementos verticalmente */
+    align-items: center; /* Centralizar horizontalmente */
+    text-align: center;
+    justify-content: center;
+    height: 100vh; /* Ocupa a altura toda da tela */
+    padding: 20px;
 }
+
 
 .home .informacoes {
     max-width: 50%;
@@ -192,29 +231,23 @@ body {
     margin-bottom: 30px;
 }
 
-.redes-sociais  {
-    list-style: none;
-    padding: 0;
+.redes-sociais {
     display: flex;
     justify-content: center;
-    gap: 40px; /* Aumentei o gap para mais distanciamento */
-    margin-top: 30px; /* Aumentei a margem superior */
-}
-
-.redes-sociais li {
-    display: inline-block;;
+    gap: 20px;
+    margin-top: 20px;
 }
 
 .redes-sociais a {
-    font-size: 36px;
-    color: #333; /* Cor antiga azul */
+    font-size: 30px;
+    color: #444;
     transition: color 0.3s ease;
 }
 
-
 .redes-sociais a:hover {
-    color: #ff6347; /* Cor laranja ao passar o mouse */
+    color: #ff6347;
 }
+
 
 .container-foto img {
     width: 250px;
