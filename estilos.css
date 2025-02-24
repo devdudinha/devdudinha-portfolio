@@ -41,6 +41,140 @@ body {
     color: #ff6347;
 }
 
+//* Ícone das três barrinhas (menu hambúrguer) */
+.menu-mobile {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 30px; /* Tamanho do ícone */
+    font-weight: bold;
+    cursor: pointer;
+    background-color: red; /* 🔴 Agora está vermelho */
+    color: white;
+    padding: 12px 18px;
+    border-radius: 5px;
+    z-index: 1000;
+    display: none; /* Some em telas grandes */
+}
+
+/* Menu lateral */
+.menu-lateral {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Escondido inicialmente */
+    width: 250px;
+    height: 100%;
+    background-color: #222;
+    padding-top: 60px;
+    transition: left 0.3s ease-in-out;
+    z-index: 999;
+}
+
+/* Lista de links dentro do menu */
+.menu-lateral ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-lateral li {
+    padding: 15px;
+    text-align: center;
+}
+
+.menu-lateral li a {
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.menu-lateral li a:hover {
+    background-color: #ff6347;
+}
+
+/* Menu ativo (quando aparece) */
+.menu-lateral.active {
+    left: 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .menu-mobile {
+        display: block; /* Aparece em telas pequenas */
+    }
+
+    .menu-lateral {
+        width: 60%; /* Ajusta o tamanho para mobile */
+        left: -60%;
+    }
+
+    .menu-lateral.active {
+        left: 0;
+    }
+}
+
+/* Barra de links abaixo do título "ME" */
+.barra-links {
+    margin-top: 20px;
+    padding: 10px 0;
+    border-top: 1px solid #ffffff;
+}
+
+.barra-links ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.barra-links li {
+    margin: 10px 0;
+}
+
+.barra-links li a {
+    color: #fff;
+    font-size: 1.5rem;
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.barra-links li a:hover {
+    background-color: #ff6347;
+}
+
+/* Estilo para o menu hambúrguer */
+.menu-mobile {
+    display: block;
+    cursor: pointer;
+}
+
+.menu-mobile i {
+    font-size: 30px;
+    color: #fff;
+}
+
+/* Estilos Responsivos */
+@media (max-width: 768px) {
+    .cabecalho .menu ul {
+        display: none; /* Esconde o menu horizontal */
+    }
+
+    .menu-mobile {
+        display: block;
+        cursor: pointer;
+    }
+
+    .menu-lateral {
+        left: 0; /* Exibe o menu lateral quando aberto */
+    }
+
+    .menu-lateral.active {
+        left: 0;
+    }
+}
+
 .cabecalho {
     display: flex;
     justify-content: space-between;
