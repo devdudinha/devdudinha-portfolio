@@ -479,10 +479,7 @@ body {
 @media (max-width: 768px) {
     /* Ajuste do cabeçalho no responsivo */
     .cabecalho {
-        height: 60px; /* Reduz a altura do cabeçalho */
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        display: none;
     }
 
     /* Esconde a logo "ME" no mobile */
@@ -504,8 +501,8 @@ body {
 
     /* Ajusta o tamanho da imagem para ficar redonda */
     .img-perfil {
-        width: 120px; /* Ajuste de tamanho */
-        height: 120px;
+        width: 150px; /* Ajuste de tamanho */
+        height: 150px;
         border-radius: 50%; /* Deixa a imagem completamente redonda */
         object-fit: cover;
     }
@@ -520,4 +517,15 @@ body {
             margin-bottom: 50px; /* Espaço entre os projetos */
         }
     }
-    
+}
+
+@media (max-width: 468px) {
+    .sua-classe-da-imagem {
+        width: 150px; /* Ajuste o tamanho conforme necessário */
+        height: 150px; /* Mantém a imagem quadrada */
+        border-radius: 50%; /* Torna a imagem totalmente redonda */
+        object-fit: cover; /* Garante que a imagem fique bem ajustada */
+        display: block;
+        margin: 0 auto; /* Centraliza a imagem */
+    }
+}
