@@ -9,171 +9,126 @@ body {
     background-color: #1d1d1d;
     color: #fff;
 }
-/* Estilos para o cabeçalho e menu */
-.cabecalho {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
+/* Container do menu */
+.menu-container {
+    position: relative;
+}
+
+/* Botão de toggle do menu */
+.menu-toggle {
+    position: absolute;
+    top: 10px;
+    left: 10px;
     background-color: #333;
-}
-
-.cabecalho .logo h1 {
-    font-family: 'Raleway', sans-serif;
-    font-size: 2.5rem;
-    color: #fff;
-}
-
-.cabecalho .menu ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-.cabecalho .menu li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.2rem;
-    transition: color 0.3s;
-}
-
-.cabecalho .menu li a:hover {
-    color: #ff6347;
-}
-
-//* Ícone das três barrinhas (menu hambúrguer) */
-.menu-mobile {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    font-size: 30px; /* Tamanho do ícone */
-    font-weight: bold;
-    cursor: pointer;
-    background-color: red; /* 🔴 Agora está vermelho */
     color: white;
-    padding: 12px 18px;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 20px;
     border-radius: 5px;
-    z-index: 1000;
-    display: none; /* Some em telas grandes */
 }
 
-/* Menu lateral */
-.menu-lateral {
+.menu-toggle:hover {
+    background-color:  #ff6347;
+}
+
+/* Estilos do menu lateral */
+.sidebar {
     position: fixed;
+    left: -250px;
     top: 0;
-    left: -250px; /* Escondido inicialmente */
     width: 250px;
     height: 100%;
     background-color: #222;
     padding-top: 60px;
-    transition: left 0.3s ease-in-out;
-    z-index: 999;
+    transition: left 0.3s ease;
 }
 
-/* Lista de links dentro do menu */
-.menu-lateral ul {
+.sidebar ul {
     list-style: none;
     padding: 0;
 }
 
-.menu-lateral li {
+.sidebar ul li {
     padding: 15px;
-    text-align: center;
 }
 
-.menu-lateral li a {
+.sidebar ul li a {
     color: white;
-    font-size: 1.5rem;
     text-decoration: none;
     display: block;
-    transition: background-color 0.3s;
+    transition: background 0.3s;
 }
 
-.menu-lateral li a:hover {
-    background-color: #ff6347;
+.sidebar ul li a:hover {
+    background-color:  #ff6347;
 }
 
-/* Menu ativo (quando aparece) */
-.menu-lateral.active {
+/* Classe para exibir o menu */
+.sidebar.active {
     left: 0;
 }
 
-/* Responsividade */
+.menu-toggle {
+    display: none; /* Esconde o botão por padrão */
+}
+
+/* Exibe o botão apenas em telas menores que 768px */
 @media (max-width: 768px) {
-    .menu-mobile {
-        display: block; /* Aparece em telas pequenas */
+    .menu-toggle {
+        display: block;
     }
 
-    .menu-lateral {
-        width: 60%; /* Ajusta o tamanho para mobile */
-        left: -60%;
-    }
-
-    .menu-lateral.active {
+    .sidebar {
+        display: none;
+        position: absolute;
+        top: 0;
         left: 0;
+        width: 200px;
+        height: 100%;
+        background-color: #333;
+        padding-top: 20px;
+    }
+
+    .sidebar.active {
+        display: block;
     }
 }
 
-/* Barra de links abaixo do título "ME" */
-.barra-links {
-    margin-top: 20px;
-    padding: 10px 0;
-    border-top: 1px solid #ffffff;
-}
-
-.barra-links ul {
-    list-style: none;
-    padding: 0;
-    text-align: center;
-}
-
-.barra-links li {
-    margin: 10px 0;
-}
-
-.barra-links li a {
-    color: #fff;
-    font-size: 1.5rem;
-    text-decoration: none;
-    display: inline-block;
-    padding: 10px;
-    transition: background-color 0.3s ease;
-}
-
-.barra-links li a:hover {
-    background-color: #ff6347;
-}
-
-/* Estilo para o menu hambúrguer */
-.menu-mobile {
-    display: block;
-    cursor: pointer;
-}
-
-.menu-mobile i {
-    font-size: 30px;
-    color: #fff;
-}
-
-/* Estilos Responsivos */
+/* Esconde os links do cabeçalho em telas menores */
 @media (max-width: 768px) {
-    .cabecalho .menu ul {
-        display: none; /* Esconde o menu horizontal */
+    .cabecalho .menu {
+        display: none; /* Esconde a lista de links */
     }
 
+    /* Exibe o menu lateral no canto superior direito */
+    .sidebar {
+        top: 0;
+        right: 0;
+        left: auto; /* Retira a posição à esquerda */
+        width: 250px;
+        display: none; /* Inicialmente escondido */
+    }
+
+    
+    /* Ajusta o botão de menu lateral */
     .menu-mobile {
         display: block;
+        position: absolute;
+        top: 10px;
+        left: 10px; /* Coloca no canto superior direito */
+        font-size: 30px;
         cursor: pointer;
+        color: #fff;
     }
 
-    .menu-lateral {
-        left: 0; /* Exibe o menu lateral quando aberto */
+    .menu-container {
+        display: block; /* Exibe o menu container para telas menores */
     }
 
-    .menu-lateral.active {
-        left: 0;
-    }
+   
 }
+
 
 .cabecalho {
     display: flex;
@@ -206,11 +161,9 @@ body {
     color: #ff6347;
 }
 
-/* Estilos para a seção home */
 .menu-mobile {
     display: none;
 }
-
 .home {
     display: flex;
     flex-direction: column; /* Empilhar os elementos verticalmente */
@@ -285,10 +238,6 @@ body {
     margin-top: 30px;
 }
 
-/* Ativando o menu mobile */
-.menu-mobile.active + .menu ul {
-    display: block;
-}
 
 .titulo {
     font-family: 'Raleway', sans-serif;
