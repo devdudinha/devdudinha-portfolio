@@ -512,8 +512,8 @@ body {
 }
 
 .container-foto img {
-    width: 250px; /* Ou o tamanho desejado */
-    height: 250px; /* Deve ser igual à largura para um círculo perfeito */
+    width: 250px; /* Ajuste conforme necessário */
+    height: 250px; /* Deve ser igual à largura */
     border-radius: 50%;
     object-fit: cover;
 }
@@ -534,5 +534,4 @@ body {
         border-radius: 50%;
         object-fit: cover;
     }
-}
 }
