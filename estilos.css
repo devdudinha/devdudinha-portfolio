@@ -509,6 +509,22 @@ body {
             margin-bottom: 20px; /* Adiciona espaço entre os projetos */
         }
     }
+
+    @media (max-width: 345px) {
+        .container-projetos {
+            grid-template-columns: 1fr;
+            padding: 10px; /* Adiciona padding ao container */
+        }
+    
+        .projeto {
+            width: 100%;
+            margin-bottom: 10px; /* Reduz a margem entre os projetos */
+        }
+    
+        .projeto-img img {
+            width: 100%; /* Garante que a imagem do projeto ocupe toda a largura */
+        }
+    }
 }
 
 .container-foto img {
@@ -526,12 +542,9 @@ body {
         object-fit: cover;
     }
 }
-
-@media (max-width: 365px) {
+@media (max-width: 345px) {
     .container-foto img {
         width: 120px;
         height: 120px;
-        border-radius: 50%;
-        object-fit: cover;
     }
 }
