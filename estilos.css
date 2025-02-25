@@ -499,44 +499,40 @@ body {
         display: none;
     }
 
-    /* Ajusta o tamanho da imagem para ficar redonda */
-    .img-perfil {
-        width: 150px; /* Ajuste de tamanho */
-        height: 150px;
-        border-radius: 50%; /* Deixa a imagem completamente redonda */
-        object-fit: cover;
-    }
-
     @media (max-width: 768px) {
-        .projetos {
-            display: block; /* Faz com que os projetos fiquem um abaixo do outro */
+        .container-projetos {
+            grid-template-columns: 1fr; /* Muda para 1 coluna em telas menores */
         }
     
-        .projetos .card {
-            width: 100%; /* Faz cada projeto ocupar toda a largura */
-            margin-bottom: 50px; /* Espaço entre os projetos */
+        .projeto {
+            width: 100%; /* Garante que os projetos ocupem toda a largura */
+            margin-bottom: 20px; /* Adiciona espaço entre os projetos */
         }
     }
 }
 
+.container-foto img {
+    width: 250px; /* Ou o tamanho desejado */
+    height: 250px; /* Deve ser igual à largura para um círculo perfeito */
+    border-radius: 50%;
+    object-fit: cover;
+}
+
 @media (max-width: 468px) {
-    .sua-classe-da-imagem {
-        width: 150px; /* Ajuste o tamanho conforme necessário */
-        height: 150px; /* Mantém a imagem quadrada */
-        border-radius: 50%; /* Torna a imagem totalmente redonda */
-        object-fit: cover; /* Garante que a imagem fique bem ajustada */
-        display: block;
-        margin: 0 auto; /* Centraliza a imagem */
+    .container-foto img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
     }
 }
 
 @media (max-width: 365px) {
-    .sua-classe-da-imagem {
-        width: 120px; /* Tamanho menor para telas menores */
-        height: 120px; /* Mantém a imagem quadrada */
-        border-radius: 50%; /* Deixa a imagem totalmente redonda */
-        object-fit: cover; /* Garante que a imagem fique bem ajustada */
-        display: block;
-        margin: 0 auto; /* Centraliza a imagem */
+    .container-foto img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
     }
+}
 }
