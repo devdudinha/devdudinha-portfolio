@@ -1,27 +1,15 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const menuContainer = document.querySelector(".menu-container");
+document.addEventListener("DOMContentLoaded", function() {
     const menuToggle = document.getElementById("menu-toggle");
-    const menuBackdrop = document.querySelector(".menu-backdrop");
+    const sidebar = document.getElementById("sidebar");
+    const closeMenu = document.getElementById("close-menu");
 
-    if (menuToggle) { // Adiciona verificação para evitar erros
+    // Abre o menu ao clicar no botão ☰
+    menuToggle.addEventListener("click", function() {
+        sidebar.style.left = "0";
+    });
 
-        // Adiciona o evento de abrir o menu
-        menuToggle.addEventListener("click", function () {
-            menuContainer.classList.toggle("active");
-        });
-
-        // Adiciona o evento de fechar o menu (ao apertar do lado de fora do menu)
-        menuBackdrop.addEventListener("click", function () {
-            menuContainer.classList.remove("active");
-        });
-    }
-
-    // Adiciona o evento de fechar o menu ao clicar em um botão do menu lateral
-    const sidebarButtons = document.querySelectorAll(".sidebar a");
-    
-    sidebarButtons.forEach(function (button) {
-        button.addEventListener("click", function () {
-            menuContainer.classList.remove("active");
-        });
+    // Fecha o menu ao clicar no botão X
+    closeMenu.addEventListener("click", function() {
+        sidebar.style.left = "-250px";
     });
 });
