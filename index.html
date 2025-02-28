@@ -25,23 +25,24 @@
                 <li><a href="#projetos">Projetos</a></li>
                 <li><a href="#habilidades">Habilidades</a></li>
             </ul>
-            <div class="menu-mobile" onclick="toggleMenu()">☰</div>
         </nav>
     </header>
     
     <div class="menu-container">
-        <button class="menu-toggle" id="menu-toggle">☰</button>
-        <nav class="sidebar" id="sidebar">
-            <ul>
-                <li><a href="#home">Início</a></li>
-                <li><a href="#projetos">Projetos</a></li>
-                <li><a href="#habilidades">Habilidades</a></li>
-            </ul>
-        </nav>
+        <div class="menu-backdrop"></div>
+            <button class="menu-toggle" id="menu-toggle">☰</button>
+            <nav class="sidebar" id="sidebar">
+                <button class="close-menu" id="close-menu">&times;</button>
+                <ul>
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#projetos">Projetos</a></li>
+                    <li><a href="#habilidades">Habilidades</a></li>
+                </ul>
+            </nav>
     </div>
     
     
-    <section class="home">
+    <section class="home" id="home">
         <div class="informacoes">
             <h1>Olá! Sou Maria Eduarda</h1>
             <p>Desenvolvedora web em formação, apaixonada por tecnologia e inovação.</p>
@@ -172,6 +173,7 @@
             <p>&copy; 2025 Maria Eduarda - Todos os direitos reservados.</p>
         </div>
     </footer>
+     
     <script src="index.js"></script>
 </body>
 </html>
