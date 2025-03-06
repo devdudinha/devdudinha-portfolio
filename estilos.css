@@ -36,7 +36,7 @@ body {
 }
 
 .menu-toggle:hover {
-    background-color:  #ff6347;
+    background-color:  #5A189A;
 }
 
 /* Estilos do menu lateral */
@@ -71,7 +71,7 @@ body {
 }
 
 .sidebar ul li a:hover {
-    background-color:  #ff6347;
+    background-color:  #5A189A;
 }
 
 /* Fundo preto transparente para o menu em telas menores */
